@@ -42,6 +42,9 @@
   },
   "globals": {
     "window": {}
-  }
+  },
+  "jest": {
+    "testEnvironment": "jsdom"
+}
   
 }
