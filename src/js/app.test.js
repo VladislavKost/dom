@@ -1,3 +1,3 @@
-test("test", () => {
-    expect('test').toBe('test');
-  });
+test("1234", () => {
+  expect("test").toBe("test");
+});
