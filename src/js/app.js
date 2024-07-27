@@ -1,11 +1,19 @@
-// TODO: write code here
-
-// comment this to pass build
-const unusedVariable = "variable";
-
-// for demonstration purpose only
-export default function demo(value) {
-  return `Demo: ${value}`;
+const getRandomInt = () => {
+  return Math.floor(Math.random() * (8 - 0 + 1));
 }
 
-console.log("app.js included");
+const updateGoblins = (goblins, imgTag) => {
+  const value = getRandomInt()
+  goblins[value].appendChild(imgTag)
+  console.log(goblins[value].children)
+}
+
+window.onload = function () {
+  const goblins = document.querySelectorAll('.game-field')
+  const imgTag = document.createElement("img");
+  imgTag.classList.add('goblin')
+  imgTag.src = "img/goblin.png";
+
+  let timerId = setInterval(() => updateGoblins(goblins, imgTag), 1000);
+};
+
