@@ -10,6 +10,7 @@ export const updateGoblins = (goblins, imgTag) => {
 export const startGame = () => {
   const goblins = document.querySelectorAll(".game-field");
   const imgTag = document.createElement("img");
+  imgTag.classList.add("goblin");
   imgTag.src =
     "https://github.com/netology-code/ahj-homeworks/raw/video/dom/pic/goblin.png";
 
