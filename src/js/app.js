@@ -5,14 +5,16 @@ const getRandomInt = () => {
 const updateGoblins = (goblins, imgTag) => {
   const value = getRandomInt();
   goblins[value].appendChild(imgTag);
-  console.log(goblins[value].children);
 };
 
-window.onload = function () {
+const ready = () => {
   const goblins = document.querySelectorAll(".game-field");
   const imgTag = document.createElement("img");
   imgTag.classList.add("goblin");
-  imgTag.src = "img/goblin.png";
+  imgTag.src =
+    "https://github.com/netology-code/ahj-homeworks/raw/video/dom/pic/goblin.png";
 
   setInterval(() => updateGoblins(goblins, imgTag), 1000);
 };
+
+document.addEventListener("DOMContentLoaded", ready);
