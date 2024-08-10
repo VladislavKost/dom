@@ -17,21 +17,27 @@ export const startGame = () => {
 
   setInterval(() => updateGoblins(goblins, imgTag), 1000);
 };
-export const makeTable = () => {
+
+const makeTable = () => {
   const body = document.querySelector("body");
   const tableTag = document.createElement("table");
   body.appendChild(tableTag);
-  for (let _ of Array(4).keys()) {
-    const trTag = document.createElement("tr");
-    for (let _ of Array(4).keys()) {
-      const tdTag = document.createElement("td");
-      const divTag = document.createElement("div");
-      divTag.classList.add("game-field");
-      tdTag.appendChild(divTag);
-      trTag.appendChild(tdTag);
-    }
-    tableTag.appendChild(trTag);
-  }
+
+  Array(4)
+    .fill()
+    .forEach(() => {
+      const trTag = document.createElement("tr");
+      Array(4)
+        .fill()
+        .forEach(() => {
+          const tdTag = document.createElement("td");
+          const divTag = document.createElement("div");
+          divTag.classList.add("game-field");
+          tdTag.appendChild(divTag);
+          trTag.appendChild(tdTag);
+        });
+      tableTag.appendChild(trTag);
+    });
 };
 
 document.addEventListener("DOMContentLoaded", startGame);
